@@ -215,22 +215,14 @@
     }
 
     function chargerVideoDepuisInput() {
-        navigator.clipboard.readText().then(clipText => {
-            if (clipText.includes('youtube.com/watch?v=')) {
-                document.getElementById('videoUrl').value = clipText;
-                chargerVideoDepuisURL(clipText);
-            } else {
-                const urlInput = document.getElementById('videoUrl').value;
-                if (urlInput.trim()) {
-                    chargerVideoDepuisURL(urlInput);
-                } else {
-                    alert('Ni le presse-papier ni le champ texte ne contiennent une URL YouTube valide.');
-                }
-            }
-        }).catch(() => {
-            alert('Impossible de lire le presse-papier.');
-        });
-    }
+		const urlInput = document.getElementById('videoUrl').value.trim();
+		if (urlInput && urlInput.includes('youtube.com/watch?v=')) {
+			chargerVideoDepuisURL(urlInput);
+		} else {
+			alert('Past or type YouTube URL, then load');
+		}
+	}
+
 
     function chargerVideoDepuisURL(url) {
         const videoId = new URL(url).searchParams.get('v');
