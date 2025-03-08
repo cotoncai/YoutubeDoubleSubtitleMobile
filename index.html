@@ -160,7 +160,7 @@
 </div>
 
 <div class="video-url-container">
-	<input type="text" id="videoUrl" placeholder="Simply Ctrl+C the YouTube URL or type it here, then load ->">
+	<input type="text" id="videoUrl" placeholder="Type the YouTube URL here, then load ->">
 	<button onclick="chargerVideoDepuisInput()">Load Vidéo</button>
 	<div class="instructions">
 		- Arrow button (↓↑) = slide out the hidden second player and then adjust the subtitle settings.<br>
@@ -219,7 +219,7 @@
 		if (urlInput && urlInput.includes('youtube.com/watch?v=')) {
 			chargerVideoDepuisURL(urlInput);
 		} else {
-			alert('Past or type YouTube URL, then load');
+			alert('Please type a valid YouTube URL.');
 		}
 	}
 
